@@ -1,0 +1,15 @@
+1;Slatina;Olt
+2;Barlad;Vaslui
+3;Craiova;Dolj
+4;Pitesti;Arges
+5;Bucuresti;Bucuresti
+6;Bucuresti;Bucuresti
+7;Piatra-Neamt;Neamt
+8;Bucuresti;Bucuresti
+9;Craiova;Dolj
+10;Slatina;Olt
+11;Craiova;Dolj
+12;Pitesti;Arges
+13;Pitesti;Arges
+14;Barlad;Vaslui
+15;Bucuresti;Bucuresti

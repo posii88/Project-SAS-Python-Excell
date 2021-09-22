@@ -1,0 +1,16 @@
+1;Aparate incorporabile;1
+2;Laptop;5
+3;Periferice;2
+4;Preparare Cafea si Bauturi;4
+5;Imprimante si consumabile;1
+6;Preparate alimente;4
+7;Audio HI-FI;1
+8;Hote;2
+9;Smartphone;1
+10;Smartwatch si Smartbrand;2
+3;Audio HI-FI;3
+11;Imprimante si consumabile;1
+12;Procesare Alimente;1
+13;Stocare date;4
+14;Periferice si Accesorii TV-Audio;1
+15;Climatizare;1

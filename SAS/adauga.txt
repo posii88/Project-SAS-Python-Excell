@@ -1,0 +1,4 @@
+Electrocasnice Mari;Aparate tuns iarba; 100; 305 
+Telefoane-Tablete; IPod; 50;700
+TV, Audio-Video, Foto; Televizor cu tub; 10; 1111
+Laptop, IT; Tastatura si mouse; 180; 110

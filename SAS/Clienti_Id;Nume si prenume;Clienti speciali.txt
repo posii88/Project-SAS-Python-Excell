@@ -1,0 +1,15 @@
+1;Ion Mihai;0
+2;Dan Pavel;1
+3;Pavel Bartos;1
+4;Dana Budeanu;1
+5;Dana Stefan;0
+6;Matei Cruceru;1
+7;Aurel Speriatu;0
+8;Marius Popescu;0
+9;Posii Roll;1
+10;Mihaela Ilie;1
+11;Elena Deaconu;1
+12;Polina Mihai;1
+13;Daniel Popescu;0
+14;Corina Cristea;1
+15;Miki Bobe;1

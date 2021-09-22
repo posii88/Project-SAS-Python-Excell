@@ -1,0 +1,201 @@
+data produse;
+	length Categorie $50;
+	length TipProdus $60;
+	infile '/home/u58025986/Proiect/adauga.txt' dlm=';';
+	input Categorie $ TipProdus $Cantitate PretMediu$;
+run;
+
+data dataClient;
+	infile '/home/u58025986/Proiect/IdClientOrasJudet.txt' dlm=';';
+	input ClientId $ Oras$ Judet $;
+run;
+
+data Cumparaturi;
+	length TipProdus $60;
+	infile '/home/u58025986/Proiect/Id_Client;Tip_produs;Cantitate_Dorita.txt' 
+		dlm=';';
+	input ClientId $ TipProdus$ CantitateDorita $;
+run;
+
+data dateAngajat;
+	length Prenume $50;
+	length Oras $60;
+	infile '/home/u58025986/Proiect/Angajat_Id;Nume;Prenume;Oras;NumarTaskuriRealizate;SalariiAngajati.txt' 
+		dlm=';';
+	input 
+		AngajatId $ Nume$ Prenume $ Oras$ NumarTaskuriRealizate$ SalariiAngajati$;
+run;
+data produse;
+length Categorie $50;
+length TipProdus $60;
+	infile '/home/u58025986/Proiect/adauga.txt' dlm=';';
+	input Categorie $ TipProdus $Cantitate PretMediu$ ;
+run;
+
+
+data dataClient;
+	infile '/home/u58025986/Proiect/IdClientOrasJudet.txt' dlm=';';
+	input ClientId $ Oras$ Judet $ ;
+run;
+
+data Cumparaturi;
+length TipProdus $60;
+	infile '/home/u58025986/Proiect/Id_Client;Tip_produs;Cantitate_Dorita.txt' dlm=';';
+	input ClientId $ TipProdus$ CantitateDorita $ ;
+run;
+
+data dateAngajat;
+length Prenume $50;
+length Oras $60;
+	infile '/home/u58025986/Proiect/Angajat_Id;Nume;Prenume;Oras;NumarTaskuriRealizate;SalariiAngajati.txt' dlm=';';
+	input AngajatId $ Nume$ Prenume $ Oras$ NumarTaskuriRealizate$ SalariiAngajati$  ;
+run;
+
+data ClientiSpeciali;
+length NumePrenume $60;
+	infile '/home/u58025986/Proiect/Clienti_Id;Nume si prenume;Clienti speciali.txt' dlm=';';
+	input ClientId $ NumePrenume $ ClientiSpeciali$  ;
+run;
+
+data Principal;
+length Categorie $60;
+length TipProduse $60;
+	infile '/home/u58025986/Proiect/Categorie;Tip produse;Cantitate;Pret mediu;Venit brut;Discount initial;Discount final.txt' dlm=';';
+	input Categorie$ TipProduse$ Cantitate$  PretMediu $ VenitBrut $ DiscountInitial$  DiscountFinal$ ;
+run;
+
+
+proc format;
+value $ClientiSpeciali '0' = 'client normal'
+			'1' = 'client special'
+			other = 'format necoresp.';
+
+run;
+
+
+
+title "Informatii despre cantitate speciali folosind formatele";
+proc print data=ClientiSpeciali;
+var ClientId NumePrenume ClientiSpeciali;
+format ClientiSpeciali $ClientiSpeciali.
+run;
+
+
+/* Creare subset de date */
+
+proc print data=ClientiSpeciali;
+where ClientiSpeciali='1';
+var ClientId NumePrenume ClientiSpeciali  ;
+run;
+
+
+data Cantitatee;
+set work.Principal;
+date=input(Cantitate,number.);
+run;
+
+proc print data=Cantitatee;
+where date>50 and Categorie= 'TV, Audio-Video, Foto';
+var Categorie TipProduse Cantitate ;
+run;
+
+proc sql;
+select sum(date) as suma
+from Cantitatee;
+quit;
+
+
+/*  utilizarea de proceduri pentru rapoarte */
+proc univariate data=dateAngajat plot;
+var Nume Prenume NumarTaskuriRealizate;
+title "Numarul de task-uri realizate de angajati in aceasta luna";
+run;
+
+
+data ClientiSpeciali;
+	length NumePrenume $60;
+	infile 
+		'/home/u58025986/Proiect/Clienti_Id;Nume si prenume;Clienti speciali.txt' 
+		dlm=';';
+	input ClientId $ NumePrenume $ ClientiSpeciali$;
+run;
+
+data Principal;
+	length Categorie $60;
+	length TipProduse $60;
+	infile '/home/u58025986/Proiect/Categorie;Tip produse;Cantitate;Pret mediu;Venit brut;Discount initial;Discount final.txt' 
+		dlm=';';
+	input Categorie TipProduse 
+		Cantitate$  PretMediu $ VenitBrut $ DiscountInitial$  DiscountFinal$;
+run;
+
+proc format;
+	value Cantitate low-50="cantitate mica" 50-100="cantitate medie" 
+		100-high="cantitate mare";
+run;
+
+title "Informatii despre cantitate speciali folosind formatele";
+
+proc print data=Principal;
+	var Categorie TipProduse Cantitate;
+	format Cantitate Cantitate;
+run;
+
+data Marire_salarii;
+infile '/home/u58025986/Proiect/Angajat_Id;Nume;Prenume;Oras;NumarTaskuriRealizate;SalariiAngajati.txt' dlm=';';
+input Angajat_Id$ Nume$ Prenume$ Oras$ NumarTaskuriRealizate$ SalariiAngajati$;
+contor=0;
+NumarTaskuri=NumarTaskuriRealizate;
+do until(NumarTaskuri lt 5);
+contor=contor+1;
+MarireSalariiAngajati=SalariiAngajati+SalariiAngajati*contor/100;
+NumarTaskuri=NumarTaskuri-1;
+end;
+run;
+proc print data=Marire_salarii noobs;
+title "Marire salarii";
+run;
+
+/* combinare seturi date */
+
+DATA Clienti_speciali;
+   INFILE '/home/u58025986/Proiect/Clienti_Id;Nume si prenume;Clienti speciali.txt' dlm=';';
+   INPUT Clienti_Id$ Nume$ Client_special$;
+PROC sort DATA = clienti_speciali;
+by Clienti_Id;
+   TITLE 'Date clienti speciali';
+RUN;
+
+DATA Cumparaturi_clienti;
+   INFILE '/home/u58025986/Proiect/Id_Client;Tip_produs;Cantitate_Dorita.txt' dlm=';';
+   INPUT Clienti_Id$ Tip_produs$ Cantitate_Dorita$;
+PROC sort DATA = cumparaturi_clienti;
+by Clienti_Id;
+   TITLE 'Date cumparaturi clienti';
+RUN;
+
+DATA Produsele;
+   INFILE '/home/u58025986/Proiect/Categorie;Tip produse;Cantitate;Pret mediu;Venit brut;Discount initial;Discount final.txt' dlm=';';
+   INPUT Categorie$ Tip_produs$ Cantitate$ Pret_mediu$ Venit_brut$ Discount_initial$ Discount_final$;
+PROC sort DATA = produsele;
+by Tip_produs;
+   TITLE 'Date produse';
+RUN;
+
+DATA Acordare_discount;
+merge clienti_speciali cumparaturi_clienti;
+by Clienti_Id;
+if Client_special eq '1' then Discount=30;
+else Discount=10;
+proc sort data=acordare_discount;
+by Tip_produs;
+title 'acordare discount pentru clienti speciali';
+run;
+
+Data Aplica_discount;
+merge acordare_discount produsele;
+by Tip_produs;
+pret_comanda=Pret_mediu*Cantitate_dorita-(Pret_mediu*Cantitate_dorita*Discount/100);
+proc print data=aplica_discount;
+title 'aplica discount pentru clienti speciali';
+run;

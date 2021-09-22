@@ -1,0 +1,15 @@
+1;Ion;Andrei;Slatina;10;3560
+2;Dan;Ion;Barlad;20;2222
+3;Marian;Ian;Craiova;22;5621
+4;Duda;Marius;Pitesti;19;1999
+5;Gura;Alexandra;Bucuresti;20;2856
+6;Guta;Dana;Bucuresti;19;2222
+7;Mia;Rosa;Piatra-Neamt;15;2875
+8;Moraru;Daniela;Bucuresti;18;3698
+9;Posi;Andreea;Craiova;29;3333
+10;Rossi;Flori;Slatina;12;5000
+11;Marica;Dana;Bucuresti;15;2510
+12;Marinescu;Mihai;Piatra-Neamt;12;5500
+13;Popesci;Teo;Bucuresti;22;1987
+14;Popescu;Marius;Craiova;18;3963
+15;Theodorescu;Maria;Slatina;9;3389

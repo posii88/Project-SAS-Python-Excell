@@ -1,0 +1,38 @@
+Electrocasnice Mari;Aparate frigorifice;223;2500;557500;20%;0,2
+Electrocasnice Mari;Aparate incorporabile;290;2000;580000;0,3;0,25
+Electrocasnice Mari;Masini de spalat vase;47;1500;70500;0,15;0,15
+Electrocasnice Mari;Aragazuri;34;1000;34000;0,4;0,35
+Electrocasnice Mari;Masini de spalat rufe;223;1500;334500;0,6;0,55
+Electrocasnice Mari;Hote;89;700;62300;0,25;0,2
+Telefoane-Tablete;Smartphone;166;2800;464800;0,3;0,25
+Telefoane-Tablete;Accesorii Smartphone;230;50;11500;0,35;0,3
+Telefoane-Tablete;Smartwatch si Smartbrand;109;1000;109000;0,4;0,35
+Telefoane-Tablete;Tablete;100;500;50000;0,25;0,2
+Telefoane-Tablete;Periferice mobile;191;50;9550;0,2;0,2
+Telefoane-Tablete;Telefoane;22;2800;61600;0,35;0,3
+TV, Audio-Video, Foto;Televizoare;186;2780;517080;0,2;0,2
+TV, Audio-Video, Foto;Portabile audio;377;150;56550;0,1;0,1
+TV, Audio-Video, Foto;Foto-Video;16;1700;27200;0,4;0,35
+TV, Audio-Video, Foto;Audio HI-FI;115;500;57500;0,15;0,15
+TV, Audio-Video, Foto;Accesorii Foto-Video;86;150;12900;0,19;0,19
+TV, Audio-Video, Foto;Home Cinema;36;150;5400;0,15;0,15
+TV, Audio-Video, Foto;Videoproiectoare si Accesorii;17;1600;27200;0,2;0,2
+TV, Audio-Video, Foto;Periferice si Accesorii TV-Audio;176;50;8800;0,45;0,4
+Laptop, IT;Laptop;216;3400;734400;0,22;0,22
+Laptop, IT;Desktop PC si Monitoare;172;4800;825600;0,1;0,1
+Laptop, IT;Componente;67;250;16750;0,13;0,13
+Laptop, IT;Accesorii laptop;207;80;16560;0,22;0,22
+Laptop, IT;Periferice;283;150;42450;0;0
+Laptop, IT;Retelistice;144;220;31680;0,01;0,01
+Laptop, IT;Stocare date;118;815;96170;0,15;0,15
+Laptop, IT;Imprimante si consumabile;133;1200;159600;0,05;0,05
+Laptop, IT;Software;18;90;1620;0,19;0,19
+Climatizare,Ingrijire, Locuinta si Tesaturi;Ingrijire locuinta;205;970;198850;0,4;0,35
+Climatizare,Ingrijire, Locuinta si Tesaturi;Ingrijire tesaturi;86;470;40420;0,3;0,25
+Climatizare,Ingrijire, Locuinta si Tesaturi;Climatizare;123;1800;221400;0,18;0,18
+Electrocasnice bucatarie;Preparare Cafea si Bauturi;232;590;136880;0,12;0,12
+Electrocasnice bucatarie;Prepare Paine;51;100;5100;0;0
+Electrocasnice bucatarie;Articole menaj;43;99;4257;0,28;0,28
+Electrocasnice bucatarie;Preparate alimente;152;350;53200;0,26;0,26
+Electrocasnice bucatarie;Cuptoare Microunde si Electrocasnice;34;510;17340;0,3;0,25
+Electrocasnice bucatarie;Procesare Alimente;42;468;19656;0,05;0,05
